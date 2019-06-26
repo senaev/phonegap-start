@@ -18,11 +18,14 @@
             font-family: 'Open Sans', sans-serif;
         }
         .table-wrapper {
-            width: 700px;
+            width: 100%;
             margin: 30px auto;
             background: #fff;
             padding: 20px;
             box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        }
+        .table>thead>tr>th {
+            vertical-align: top;
         }
         .table-title {
             padding-bottom: 10px;
@@ -99,7 +102,7 @@
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-8"><h2>Цены на <b>трубы</b></h2></div>
+                <div class="col-sm-8"><h2>Цены на трубы</h2></div>
                 <div class="col-sm-4">
                     <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Добавить трубу</button>
                 </div>
@@ -109,7 +112,7 @@
             <thead>
             <tr>
                 <th>ГОСТ</th>
-                <th>Цена (в рублях)</th>
+                <th>Цена <br>(в рублях)</th>
                 <th>Действия</th>
             </tr>
             </thead>

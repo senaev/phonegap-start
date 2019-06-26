@@ -5,7 +5,7 @@ const API_URL = 'https://senaev.com/tubes';
  */
 async function requestAllTubes() {
     const query = `SELECT * FROM tubes;`;
-
+//1. Отправляем запрос на сервер
     const response = await fetch(API_URL, {
         method: 'post',
         cache: 'no-cache',
@@ -14,8 +14,11 @@ async function requestAllTubes() {
         },
         body: JSON.stringify({query: query}),
     });
+    //2. Парсим ответ от сервера из бинарного формата в текстовый
     const text = await response.text();
+    //3. Преобразуем текстовые данные в объекты
     const data = JSON.parse(text);
+    //4. Возвращаем строки таблицы в виде массива для показа пользователю
     return data.result.rows;
 }
 
